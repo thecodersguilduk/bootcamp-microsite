@@ -4,6 +4,10 @@
     {% include "head.njk" %}
   </head>
   <body id="top">
+  <div class="relative bg-gray-50">
+    <div class="pb-6">
+      {% include 'navbar.njk' %}
+    </div>
     {{ content | safe }}
     {% include "footer.njk" %}
     {% include "js.njk" %}

@@ -1,4 +1,4 @@
-const environment = process.env.ELEVENTY_ENV;
+const environment = process.env.ELEVENTY_ENV || 'local';
 const DEV_ENV = 'dev';
 const devUrl = 'http://localhost:8080';
 const prodUrl = 'https://MY-DOMAIN.com';
@@ -12,5 +12,5 @@ module.exports = {
     tracking: {
         gtag: 'MY-GTAG-ID',
         pixelId: 'MY-PIXEL-ID',
-    },
+    }
 };

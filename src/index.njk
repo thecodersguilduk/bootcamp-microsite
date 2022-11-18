@@ -2,29 +2,128 @@
 layout: base.njk
 isFront: true
 title: Home
+meta_description: hire emerging top talent trained by expert  industry professionals
+meta_title: Skills Bootcamp Graduates - The Coders Guild
 ---
-<header
-    class="header w-full min-h-[-webkit-fill-available] sm:min-h-screen flex flex-col justify-around bg-cover sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg">
-    {% include "navbar.njk" %}
-    <div class="flex flex-col justify-center h-full pt-16">
-        <div class="flex flex-col items-center self-center w-full px-4 sm:flex-row md:w-5/6 xl:w-2/3 sm:px-0">
-            <div class="w-full pb-12 text-center sm:px-8">
-                <h1 class="mb-6 font-bold tracking-wide text-white marker:text-2xl sm:text-4xl">TEAtime Starter Project
-                    for YOU</h1>
-                <p class="text-lg font-bold text-white [text-shadow: 0px 0px 1px whitesmoke]">Customise this site
-                    however you want!</p>
-            </div>
+
+
+  <div class="lg:relative">
+    <div class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+      <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+          <span class="block xl:inline">Graduate Showcase</span>
+        </h1>
+        <p class="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">Hire emerging top talent trained by expert  industry professionals</p>
+        <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+          <div class="rounded-md shadow">
+            <a href="#contact" class="flex w-full items-center justify-center rounded-md border border-transparent bg-codersBlue px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg">Enquire Now</a>
+          </div>
+          <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+            <a href="#about" class="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-codersBlue hover:bg-gray-50 md:py-4 md:px-10 md:text-lg">Find out More</a>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="flex flex-row justify-center w-full pb-10">
-        <a class="px-10 py-2 text-lg text-white rounded-full shadow-md bg-customRed bg-opacity-80 hover:bg-opacity-50 hover:no-underline"
-            href="#about">More Information</a>
+    <div class="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+      <img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80" alt="">
     </div>
-</header>
+  </div>
+</div>
+
+
+
 <main>
-    <div id="about" class="flex flex-col items-center justify-center w-full min-h-screen">
-        <div class="self-center w-full px-4 pt-5 text-center sm:w-3/4 sm:px:0">
-            {% renderFile "./src/_includes/content/about.md" %}
+    <div id="about" class="w-full">
+        <div class="relative overflow-hidden bg-gray-50 pt-16 sm:pt-24 lg:pt-32 pb-16">
+          <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+            <div>
+              <p class="mt-2 font-bold tracking-tight text-gray-900 text-xl">Looking to recruit top emerging talent and bolster team productivity? Hire the most ambitious and driven individuals looking for their next career opportunity.</p>
+              <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">All these people have already been trained by us on an 12 week intensive digital skills bootcamp funded by the Dept for Education.</p>
+              <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">To interview or hire one of these people, or for more information, please get in touch using the form below.</p>
+            </div>
+          </div>
         </div>
+
+        <div class="py-16">
+          <h2 class="text-center text-3xl text-codersBlue mb-8">Meet the Graduates</h2>
+            <ul class="
+                nav nav-tabs nav-justified
+                flex flex-col
+                md:flex-row
+                flex-wrap
+                list-none
+                border-b-0
+                pl-0
+                mb-4
+              " id="tabs-tabJustify" role="tablist">
+                {% for course in courses %}
+                <li class="nav-item flex-grow text-center" role="presentation">
+                    <a href="#tabs-{{course.title}}Justify" class="
+                    nav-link
+                    w-full
+                    block
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    border-x-0 border-t-0 border-b-2 border-transparent
+                    px-6
+                    py-3
+                    my-2
+                    hover:border-transparent hover:bg-gray-100
+                    focus:border-transparent
+                    {% if loop.index0 === 0 %}active{%endif%}
+                    " id="tabs-{{course.title}}-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-{{course.title}}Justify" role="tab"
+                    aria-controls="tabs-{{course.title}}Justify" aria-selected="true">{{course.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="max-w-7xl mx-auto">
+              <div class="tab-content" id="tabs-tab{{course.title}}Justify">
+                {% for course in courses %}
+                  <div class="tab-pane fade {% if loop.index0 === 0 %}show active{%endif%}" id="tabs-{{course.title}}Justify" role="tabpanel"
+                    aria-labelledby="tabs-{{course.title}}-tabJustify">
+                    <ul role="list" class="space-y-12 sm:grid sm:grid-cols-4 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
+                    {% for post in posts %}
+                        {% if post.courseName === course.title %}
+                        <li>
+                            <div class="space-y-4">
+                              <div class="aspect-w-3 aspect-h-2">
+                                <img class="rounded-lg object-cover shadow-lg" src="{{post.mainImage}}" alt="">
+                              </div>
+                              <div class="space-y-1 text-lg font-medium leading-6">
+                                <h3>{{post.title}}</h3>
+                              </div>
+                              <div class="text-lg">
+                                <p class="text-gray-500 text-ellipsis">{{post.body | truncate(200) | safe }}</p>
+                              </div>
+
+                              <ul role="list" class="flex space-x-5">
+                                <li>
+                                  <a href="#" class="text-gray-400 hover:text-gray-500">
+                                    <span class="sr-only">Twitter</span>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                      <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#" class="text-gray-400 hover:text-gray-500">
+                                    <span class="sr-only">LinkedIn</span>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                      <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
+                                    </svg>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor%}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+      </div>
     </div>
 </main>

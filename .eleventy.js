@@ -15,6 +15,11 @@ const removeTrailingSlash = (url) => {
   return url.replace(/\/$/, '');
 }
 
+const truncate = (str, len) => {
+  const text = str.substring(0, len) + '...';
+  return text;
+}
+
 async function imageShortcode(src, cls, alt, sizes) {
   let metadata = await Image(src, {
     widths: [600, 900, 1500],
@@ -39,6 +44,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.addFilter('removeTrailingSlash', removeTrailingSlash);
+  eleventyConfig.addFilter('truncate', truncate);
 
   eleventyConfig.addWatchTarget('./src/_includes/css/');
 

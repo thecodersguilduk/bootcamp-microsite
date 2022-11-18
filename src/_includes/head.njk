@@ -15,9 +15,10 @@
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{{ site.image | url | absoluteUrl(env.url) }}">
 <meta name="theme-color" content="#ffffff">
-{% favicon './src/static/img/logo.png' %}
+{% favicon './src/static/img/logo.svg' %}
 <link rel="stylesheet" href="/css/page.css">
-<script defer src="/js/alpine.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 {% if env.isProd %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   {% if env.tracking.gtag !== 'MY-GTAG-ID' %}

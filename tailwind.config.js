@@ -13,6 +13,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       customRed: '#BB2637',
+      codersBlue: '#2574a9',
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -28,5 +29,10 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
-} 
+  plugins: [
+    require('tw-elements/dist/plugin'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ],
+}

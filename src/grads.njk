@@ -1,0 +1,16 @@
+---js
+{
+pagination: {
+    data: 'posts',
+    size: 1,
+    alias: 'post'
+    },
+permalink: "/graduates/{{ post.title }}/index.html",
+eleventyComputed: {
+    meta_title: data => data.post.title,
+    mainImage: data => data.post.mainImagefeaturedImage,
+    body: data => data.post.body
+    },
+layout: 'grad.njk'
+}
+---
