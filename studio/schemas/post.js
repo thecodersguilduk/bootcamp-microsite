@@ -50,6 +50,24 @@ export default {
       description: 'The Whole Link'
     },
     {
+      name: 'codepen',
+      title: 'Codepen profile link',
+      type: 'string',
+      description: 'The Whole Link'
+    },
+    {
+      name: 'website',
+      title: 'Website portfolio link',
+      type: 'string',
+      description: 'The Whole Link'
+    },
+    {
+      name: 'video',
+      title: 'Video link - for Youtube this should be the embed src link',
+      type: 'string',
+      description: 'The src section of the embed link'
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
