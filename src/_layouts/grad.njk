@@ -11,7 +11,7 @@ layout: base.njk
       </div>
     </div>
     <div class="mt-8 grid lg:grid-cols-2 lg:gap-8">
-        <div class="mt-8 lg:mt-0 order-last lg:order-first">
+        <div class="mt-8 lg:mt-0 order-last">
           <div class="mx-auto max-w-prose text-base lg:max-w-none post-content text-gray-500">
             {{post.body | safe}}
           </div>
@@ -19,7 +19,7 @@ layout: base.njk
             {% include 'socialicons.njk' %}
           </div>
         </div>
-        <div class="relative order-first lg:order-last">
+        <div class="relative order-first">
           <div class="relative mx-auto max-w-prose text-base lg:max-w-none">
             <figure>
               <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
