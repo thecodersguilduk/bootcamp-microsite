@@ -34,7 +34,7 @@ function prepPost(data){
       });
     data.mainImage = urlFor(data.mainImage).width(650).url();
     data.courseName = data.courseName[0].title;
-    console.log(data.courseName);
+    console.log(data);
     return data
 }
 
